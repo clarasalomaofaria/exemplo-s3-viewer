@@ -19,9 +19,8 @@ console.log('🔹 Conectando à AWS...');
 AWS.config.update({ region: process.env.AWS_REGION });
 s3 = new AWS.S3();
 
-// =====================================================
-// Rota principal e rota dinâmica para nome de arquivo
-// =====================================================
+
+// Rota dinâmica para nome de arquivo
 app.get(['/', '/dados/:arquivo'], async (req, res) => {
   try {
     // Captura o nome do arquivo dinamicamente
